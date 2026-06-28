@@ -1,0 +1,28 @@
+# Maven
+target/
+*.jar
+*.war
+*.ear
+
+# Gradle
+.gradle/
+build/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.eclipse
+
+# Spring Boot
+*.log
+logs/
+
+# 环境变量（重要：防止密码泄露）
+.env
+application-local.properties
+application-local.yml
+
+# 系统文件
+.DS_Store
+Thumbs.db
