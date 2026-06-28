@@ -26,4 +26,8 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <directory>${project.basedir}/distribution</directory>
+    </build>
+
 </project>
