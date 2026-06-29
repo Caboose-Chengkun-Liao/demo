@@ -2,6 +2,7 @@
 target/
 *.war
 *.ear
+distribution/
 
 # Gradle
 .gradle/
