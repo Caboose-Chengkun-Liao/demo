@@ -1,2 +1,3 @@
-com/example/ExampleApplication.class
 com/example/controller/HomeController.class
+com/example/config/CorsConfig.class
+com/example/ExampleApplication.class
