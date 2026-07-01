@@ -10,10 +10,10 @@ import com.example.entity.User;
 import com.example.repository.UserRepository;
 
 @Service
-public class CreateUserService {
+public class UserService {
     private final UserRepository userRepository;
 
-    public CreateUserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
