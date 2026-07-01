@@ -19,7 +19,7 @@ public class CreateUserService {
 
     public UserResponse createUser(CreateUserRequest req) {
         User user = new User();
-        user.setUsername(req.getUserName());
+        user.setUsername(req.getUsername());
         user.setPassword(req.getPassword());
 
         User save = userRepository.save(user);
