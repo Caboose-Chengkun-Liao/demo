@@ -2,6 +2,9 @@ package com.example.entity;
 
 import java.time.OffsetDateTime;
 
+import org.hibernate.annotations.Generated;
+import org.hibernate.generator.EventType;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,6 +25,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Generated(event = EventType.INSERT)
     @Column(name = "created_at", insertable = false, updatable = false)
     private OffsetDateTime createdAt;
 
