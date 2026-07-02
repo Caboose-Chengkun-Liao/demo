@@ -31,6 +31,10 @@ public class UserService {
         return toResponse(save);
     }
 
+    public boolean existsByUsername(String username) {
+        return userRepository.existsByUsername(username);
+    }
+
     public List<UserResponse> listUsers() {
         return userRepository.findAll().stream()
             .map(u -> toResponse(u))

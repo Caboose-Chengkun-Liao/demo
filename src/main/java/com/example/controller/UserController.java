@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -33,4 +35,10 @@ public class UserController {
     public List<UserResponse> list() {
         return userService.listUsers();
     }
+
+    @GetMapping("/exists")
+    public boolean existsByUsername(@RequestParam String username) {
+        return userService.existsByUsername(username);
+    }
+    
 }
