@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.example.dto.CreateUserRequest;
 import com.example.dto.UserResponse;
 import com.example.entity.User;
+import com.example.exception.UsernameAlreadyExistsException;
 import com.example.repository.UserRepository;
 
 @Service
@@ -19,7 +20,7 @@ public class UserService {
 
     public UserResponse createUser(CreateUserRequest req) {
         if(userRepository.existsByUsername(req.getUsername())) {
-            throw new RuntimeException("Username " + req.getUsername() + " already exists!");
+            throw new UsernameAlreadyExistsException("Username " + req.getUsername() + " already exists!");
         }
 
         User user = new User();
