@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.dto.CreateUserRequest;
 import com.example.dto.UserResponse;
 import com.example.service.UserService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -27,7 +30,7 @@ public class UserController {
     }
 
     @PostMapping
-    public UserResponse create(@RequestBody CreateUserRequest req) {
+    public UserResponse create(@Valid @RequestBody CreateUserRequest req) {
         return userService.createUser(req);
     }
     
