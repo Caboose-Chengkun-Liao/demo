@@ -13,7 +13,7 @@ public class CreateUserRequest {
     @NotBlank(message = "Password cannot be empty.")
     @Size(min = 8, max = 30, message = "Password must be within 8-30 characters.")
     @Pattern(
-        regexp = "^(?:(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)|(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])|(?=.*[a-z])(?=.*\\d)(?=.*[^A-Za-z0-9])|(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z0-9]))\\S+$" ,
+        regexp = "^(?:(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+=-])|(?=.*[a-z])(?=.*\\d)(?=.*[!@#$%^&*()_+=-])|(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+=-]))[A-Za-z0-9!@#$%^&*()_+=-]+$" ,
         message = "Password must be the combination of 3 or more of the following characters: numbers, upper cases, lower cases and special characters."
     )
     private String password;
