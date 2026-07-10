@@ -50,7 +50,7 @@ public class SecurityConfig {
 
         config.setAllowedOrigins(List.of(
             "http://localhost:3000", 
-            "https://my-app-ruby-gamma.vercel.app/"
+            "https://my-app-ruby-gamma.vercel.app"
         ));
         config.setAllowedMethods(List.of(
             "GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"
