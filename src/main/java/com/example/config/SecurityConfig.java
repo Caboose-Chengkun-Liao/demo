@@ -26,7 +26,7 @@ public class SecurityConfig {
                 auth -> auth
                     .requestMatchers(HttpMethod.POST, "/api/users").permitAll()
                     .requestMatchers(HttpMethod.GET, "/api/users/exists").permitAll()
-                    //TODO: .requestMatchers("/api/auth/**").permitAll()
+                    .requestMatchers("/api/auth/**").permitAll()
 
                     //Other requests must be authenticated
                     .anyRequest().authenticated()
