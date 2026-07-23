@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MeController {
     @GetMapping("/api/me")
     public Map<String, String> me(Authentication authentication) {
-        String username = (String) authentication.getPrincipal();
+        String username = authentication.getName();
         return Map.of("username", username);
     }
     
