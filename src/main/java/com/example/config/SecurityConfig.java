@@ -40,6 +40,13 @@ public class SecurityConfig {
                     //Other requests must be authenticated
                     .anyRequest().authenticated()
             )
+            .exceptionHandling(e -> e
+                .authenticationEntryPoint((request, response, authException) -> {
+                    response.setStatus(401);
+                    response.setContentType("application/json");
+                    response.getWriter().write("{\"message\":\"You're not logged in\"}");
+                })
+            )
             .sessionManagement(
                 sm -> sm
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
