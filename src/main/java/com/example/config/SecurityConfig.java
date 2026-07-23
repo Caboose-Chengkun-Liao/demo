@@ -36,6 +36,7 @@ public class SecurityConfig {
                     .requestMatchers(HttpMethod.POST, "/api/users").permitAll()
                     .requestMatchers(HttpMethod.GET, "/api/users/exists").permitAll()
                     .requestMatchers("/api/auth/**").permitAll()
+                    .requestMatchers("/").permitAll()
 
                     //Other requests must be authenticated
                     .anyRequest().authenticated()
