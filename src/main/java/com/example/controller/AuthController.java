@@ -33,11 +33,15 @@ public class AuthController {
     public ResponseEntity<Map<String, String>> login(@Valid @RequestBody LoginRequest req) {
         String token = authService.login(req);
 
+        //For localhost debugging, change sameSite to Lax, and change secure to false. For deployment, set sameSite to "None"
         ResponseCookie cookie = ResponseCookie.from("token", token)
             .httpOnly(true)
             .path("/api")
             .secure(true)
             .sameSite("None")
+            //For debugging only
+            //.secure(false)
+            //.sameSite("Lax")
             .maxAge(Duration.ofHours(1))
             .build();
         
